@@ -1,4 +1,4 @@
-                                                                    Task Requirements
+                                                     Task Requirements
 The task required creating a Python tool that scrapes Twitter accounts for data. The tool should take the following inputs:
 
 - List of 10 Twitter accounts to scrape.
