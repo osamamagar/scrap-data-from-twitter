@@ -39,13 +39,22 @@ twitter_accounts = [
 ]
 
 # Ticker symbol to search for
-ticker_symbol = '$TSLA'
+ticker_symbol = input("Enter the ticker symbol (starting with $): ")
+if not ticker_symbol.startswith('$'):
+    ticker_symbol = '$' + ticker_symbol
 
-# Time interval for scraping session (in minutes)
-scraping_interval=int(input("Enter Number of minutes: "))
+# Prompt the user to enter the initial scraping interval
+initial_interval = int(input("Enter the number of minutes to search for the first time: "))
+
+
+# Prompt the user to enter the subsequent scraping interval
+rerun_interval = int(input("Enter the number of minutes to wait between subsequent searches: "))
 
 
 while True:
-    total_mentions = scrape_twitter_accounts(twitter_accounts, ticker_symbol)
-    print(f"Total mentions of {ticker_symbol}: {total_mentions} times in the last {scraping_interval} minutes.")
-    time.sleep(scraping_interval * 60)  # Convert minutes to seconds
+    mentions = scrape_twitter_accounts(twitter_accounts, ticker_symbol)
+    print(f"{ticker_symbol} was mentioned {mentions} times in the last {initial_interval} minutes.")
+    time.sleep(initial_interval * 60)  # Convert minutes to seconds
+
+    print(f"Waiting {rerun_interval} minutes for the next search...")
+    time.sleep(rerun_interval * 60)  
