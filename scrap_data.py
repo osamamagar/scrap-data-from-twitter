@@ -54,7 +54,6 @@ rerun_interval = int(input("Enter the number of minutes to wait between subseque
 while True:
     mentions = scrape_twitter_accounts(twitter_accounts, ticker_symbol)
     print(f"{ticker_symbol} was mentioned {mentions} times in the last {initial_interval} minutes.")
-    time.sleep(initial_interval * 60)  # Convert minutes to seconds
 
     print(f"Waiting {rerun_interval} minutes for the next search...")
     time.sleep(rerun_interval * 60)  
