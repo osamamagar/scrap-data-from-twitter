@@ -37,3 +37,9 @@ else:
 
 # OutPut is
 # The term 'CR Belouizdad' appears 13 times on the webpage.
+
+# If try to get data from twitter
+# output is 
+# Failed to fetch data from the profile: https://twitter.com/warrior_0719
+# PS C:\Users\Mohamed Sheta\Desktop\scrap data from twitter> 
+
